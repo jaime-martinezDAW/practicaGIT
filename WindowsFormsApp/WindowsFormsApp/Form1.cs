@@ -28,7 +28,11 @@ namespace WindowsFormsApp
             // telegrama urgente?
             if (radioButton1.Checked)
                 tipoTelegrama = 'u';
+<<<<<<< HEAD
             if (radioButton2.Checked)
+=======
+            else
+>>>>>>> 3f633c1d2f7a0536732bdfa467f6c3d7bbdf782c
                 tipoTelegrama = 'o';
             //Obtengo el número de palabras que forma el telegrama
             numPalabras = textoTelegrama.Split().Length;
@@ -49,6 +53,15 @@ namespace WindowsFormsApp
                 coste = 0;
             txtPrecio.Text = coste.ToString() + " euros";
 
+<<<<<<< HEAD
+=======
+
+        }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> 3f633c1d2f7a0536732bdfa467f6c3d7bbdf782c
         }
     }
 }
