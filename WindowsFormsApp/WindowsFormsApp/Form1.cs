@@ -26,16 +26,18 @@ namespace WindowsFormsApp
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
-            if (cbUrgente.Checked)
+            if (radioButton1.Checked)
                 tipoTelegrama = 'u';
-            //Obtengo el número de palabras que forma el telegrama 
-            numPalabras = textoTelegrama.Length;
+            if (radioButton2.Checked)
+                tipoTelegrama = 'o';
+            //Obtengo el número de palabras que forma el telegrama
+            numPalabras = textoTelegrama.Split().Length;
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
                 if (numPalabras <= 10)
-                    coste = 25;
+                    coste = 2.5;
                 else
-                    coste = 0.5 * numPalabras;
+                    coste = 2.5 + 0.5 * (numPalabras - 10);
             else
             //Si el telegrama es urgente
             if (tipoTelegrama == 'u')
@@ -46,7 +48,7 @@ namespace WindowsFormsApp
             else
                 coste = 0;
             txtPrecio.Text = coste.ToString() + " euros";
-    
+
         }
     }
 }
